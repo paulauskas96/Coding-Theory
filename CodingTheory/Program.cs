@@ -21,9 +21,9 @@
             }
 
             uiManager.Log("SIUNČIAMA SU KODAVIMU");
-            uiManager.Log("Pradinis vektorius", bits);
+            uiManager.Log("Pradinis vektorius", originalBits);
 
-            bits = ConvolutionalCode.Encode(bits);
+            bits = ConvolutionalCode.Encode(originalBits);
             uiManager.Log("Užkoduotas vektorius", bits);
 
             bits = channel.Send(bits);
