@@ -14,6 +14,7 @@ namespace CodingTheory
             Randomizer = new Random();
         }
 
+        //Imitates sending bits through channel
         public int[] Send(int[] bits)
         {
             var receivedBits = new List<int>();
@@ -28,7 +29,8 @@ namespace CodingTheory
 
             return receivedBits.ToArray();
         }
-
+        
+        //Randomly decides whether to corrupt the bit
         private bool IsCorrupted()
         {
             if (Randomizer.NextDouble() <= Probability)

@@ -14,6 +14,7 @@ namespace CodingTheory
             return Encoding.UTF8.GetString(GetByteArray(bits));
         }
 
+        //Writes bits to .bmp file and returns its location
         public static string ToImage(int[] bits, int no)
         {
             String path = Directory.GetCurrentDirectory() + @"\output" + no +".bmp";
