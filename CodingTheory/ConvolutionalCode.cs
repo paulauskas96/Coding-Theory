@@ -15,9 +15,8 @@ namespace CodingTheory
             {
                 int bit = (i < bits.Length) ? bits[i] : 0;
 
-                ShiftArray(shiftRegisters, bit);
-
                 int sumBit = (bit + shiftRegisters[1] + shiftRegisters[4] + shiftRegisters[5]) % 2;
+                ShiftArray(shiftRegisters, bit);
                 encodedBits.Add(bit);
                 encodedBits.Add(sumBit);
             }
@@ -40,7 +39,7 @@ namespace CodingTheory
                 int sumBit = (bit + nextBit + bitRegisters[1] + bitRegisters[4] + bitRegisters[5]) % 2;
 
                 int mde;
-                if (sumBit + shiftRegisters[0] + shiftRegisters[3] + shiftRegisters[5] < 2)
+                if (sumBit + shiftRegisters[0] + shiftRegisters[3] + shiftRegisters[5] <= 2)
                     mde = 0;
                 else
                     mde = 1;
