@@ -31,7 +31,7 @@ namespace CodingTheory
             int[] bitRegisters = new int[6];
             int[] shiftRegisters = new int[6];
 
-            for (int i = 0; i < (bits.Length - 12); i += 2)
+            for (int i = 0; i < bits.Length; i += 2)
             {
                 int bit = bits[i];
                 int nextBit = bits[i + 1];
@@ -44,14 +44,14 @@ namespace CodingTheory
                 else
                     mde = 1;
 
-                int decodedBit = (bit + mde) % 2;
+                int decodedBit = (bitRegisters[5] + mde) % 2;
                 decodedBits.Add(decodedBit);
 
                 ShiftArray(bitRegisters, bit);
                 ShiftArray(shiftRegisters, sumBit);
             }
 
-            return decodedBits.ToArray();
+            return decodedBits.GetRange(6, decodedBits.Count - 6).ToArray();
         }
 
         //Pushes an element to start of array and removes last element
